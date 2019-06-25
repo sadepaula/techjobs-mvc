@@ -27,5 +27,18 @@
         </div>
     </div>
 
+
+
+
+
+    <table th:fragment="jobsList" class="job-listing" th:each="result: ${results}">
+        <tr th:each="mapResult : ${result}" th:switch="${mapResult.key}">
+            <td th:text="${#strings.capitalizeWords(mapResult.key)}"></td>
+            <td th:case="'name'" th:text="${mapResult.value}"></td>
+            <td th:case="*" th:text="${mapResult.value}"></td>
+        </tr>
+    </table>
+
+
 </body>
 </html>

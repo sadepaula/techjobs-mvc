@@ -9,10 +9,16 @@
 <div class="container body-content">
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+    <p> Results: </p>
+    <div th:if="${results} and ${results.size()}" >
 
-    <!-- TODO #3 - Use the same list display from search.html -->
+        <table th:replace="fragments::jobsList"></table>
+    </div>
+
 
 </div>
+
+
 
 </body>
 </html>

@@ -35,8 +35,15 @@
     </form>
 
     <hr />
+    <p> Results: </p>
+    <div th:if="${results} and ${results.size()}" >
 
-    <!-- TODO #2 - Loop over jobs map to display all job fields -->
+        <table th:replace="fragments::jobsList"></table>
+    </div>
+
+
+
+
 
 </div>
 
